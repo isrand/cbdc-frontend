@@ -1,0 +1,19 @@
+<div class="top-menu">
+  <div class="container">
+    <img src="{{ colorScheme.logoURL }}" class="logo">
+  </div>
+</div>
+
+<overview
+  [owner]="account.owner"
+  [dean]="account.dean"
+  [balance]="account.balance"
+  [colorScheme]="colorScheme">
+</overview>
+
+<operations-bar [colorScheme]="colorScheme" [currentUser]="account.id" (toggleTransferDialogVisibility)="toggleTransferDialogVisibility()"></operations-bar>
+<div *ngIf="transferDialogVisible">
+  <transfer-dialog [self]="account.id" (reloadData)="reloadData(account.id)"></transfer-dialog>
+</div>
+
+<transaction-list [transactions]="accountTransactions" [activeAccountId]="account.id" (reloadData)="reloadData(account.id)"></transaction-list>

@@ -1,0 +1,16 @@
+<div class="overview-container">
+	<div class="column">
+		<div class="row">
+			<div class="owner-dean-container">
+				<h1 class="owner">{{ owner }}</h1>
+				<h3 class="dean">{{ dean }}<span title="Copy to clipboard" class="copy" (click)="copyDEANToClipboard(dean)"><img src="https://cdn2.iconfinder.com/data/icons/website-library-part-2/48/Website-Copy-file-512.png" style="width: 14px"></span></h3>
+		</div>
+		</div>
+
+		<div class="row">
+			<div class="balance-container">
+				<h1 class="balance">{{ balance / 100 }}<span class="digital" [ngStyle]="{'color': colorScheme.digitalEuroSymbolColor}">,- D€</span></h1>
+			</div>
+		</div>
+	</div>
+</div>

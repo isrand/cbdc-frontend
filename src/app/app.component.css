@@ -1,0 +1,20 @@
+.top-menu {
+    background: #ffffff;
+    box-shadow: 2px 2px 10px #e3e3e3;
+}
+
+.container {
+    width: 80%;
+	background-color: #ffffff;
+	margin: auto;
+}
+
+.logo {
+    margin-top: 5px;
+    max-height: 50px;
+}
+
+
+.html {
+    margin-bottom: 50px;
+}

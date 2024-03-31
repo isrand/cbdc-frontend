@@ -1,0 +1,33 @@
+<div class="transaction-card" (click)="toggleDetail()" *ngIf="debtor !== '' && !(creditor == activeAccountId && debtor == activeAccountId)"> <!-- Remove the *ngIf this to show transactions from issuer bank to mca account, and from mca account to mca account after transfering to a particular acount -->
+	<div class="row">
+		<div class="column">
+			<img src="https://cdn-icons-png.flaticon.com/512/61/61483.png" style="width:30px; float: left; margin:auto; margin-right: 25px; margin-left: 15px">
+			<div class="vendor">
+				{{ debtor }} → {{ creditor }}
+			</div>
+
+		</div>
+		<div class="column">
+			<div *ngIf="debtor != activeAccountId" class="amount-positive">
+				<div class="positive-container">
+					+{{amount / 100}}
+				</div>
+			</div>
+			<div *ngIf="creditor != activeAccountId && debtor == activeAccountId" class="amount-negative">
+				-{{amount / 100}}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div *ngIf="showDetail">
+<transaction-detail
+	[creditor]="creditor"
+	[debtor]="debtor"
+	[id]="id"
+	[timestamp]="timestamp"
+	[message]="message"
+	[activeAccountId]="activeAccountId"
+	[amount]="amount">
+</transaction-detail>
+</div>

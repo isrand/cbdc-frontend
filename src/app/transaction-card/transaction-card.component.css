@@ -1,0 +1,55 @@
+.row {
+  display: flex;
+	flex-direction: row;
+}
+
+.column {
+	width: 100%;
+}
+
+.transaction-card {
+	margin: auto;
+	width: 95%;
+	height: 35px;
+	border-bottom: 1px solid rgb(205, 205, 205);
+	background-color: #FFFFFF;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.transaction-card:hover {
+	background-color: #e9e9e9;
+	cursor: pointer;
+	box-shadow: -5px 0px 0px rgb(99, 99, 99)
+}
+
+.vendor {
+	margin-top: 5px;
+	font-weight: 100;
+	font-size: 18px;
+	text-align: left;
+	margin-left: 15px;
+	text-overflow: ellipsis;
+}
+
+.amount-negative {
+	margin-top: 5px;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: right;
+	margin-right: 15px;
+	right: 5%;
+	/* color: rgb(188, 76, 76); */
+	color: rgb(0, 0, 0);
+}
+
+.amount-positive {
+	right: 0;
+	margin-top: 5px;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: right;
+	padding: 1px;
+	margin-right: 15px;
+	color: rgb(76, 188, 102);
+}

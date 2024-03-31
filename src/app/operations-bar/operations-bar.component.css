@@ -1,0 +1,42 @@
+.row {
+  display: flex;
+	flex-direction: row;
+}
+
+.column {
+	width: 50%;
+}
+
+.operations-bar-container {
+	margin: auto;
+	width: 70%;
+	margin-top: -36px;
+	margin-bottom: 50px;
+}
+
+.operations-button {
+	margin: auto;
+	width: 90%;
+	height: 50px;
+	/* border-radius: 10px; */
+	position: relative;
+	/* opacity: 80%; */
+	background-color: #F8D447;
+	box-shadow: 1px 1px 5px rgb(218, 218, 218);
+	cursor: pointer;
+}
+
+.operations-button:hover {
+	filter: saturate(2)
+}
+
+.operations-button-label {
+	font-weight: 400;
+	width: 100%;
+	position: relative;
+  top: 50%;
+	text-align: center;
+	font-size: 18px;
+  transform: translate(0, -50%);
+	color: #000000;
+}

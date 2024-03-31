@@ -1,0 +1,10 @@
+<div class="transfer-dialog-container">
+	From: <input placeholder="Recipient" [value]="self" disabled><br><br>
+	To: <input placeholder="Recipient" [(ngModel)]="recipient" required><br><br>
+	Bank name: <input type="text" placeholder="Bank name" [(ngModel)]="bankName" required><br><br>
+	Amount: <input type="number" placeholder="Amount" [(ngModel)]="amount" required><br><br>
+	Concept: <input type="text" placeholder="Concept" [(ngModel)]="concept" required><br><br>
+
+	<button (click)="doTransfer()" [disabled]="!transferButtonEnabled" class="transfer-button">Transfer</button>
+	<button (click)="cancel()" [disabled]="!transferButtonEnabled" class="cancel-button">Cancel</button>
+</div>

@@ -1,0 +1,76 @@
+.column {
+  display: flex;
+  flex-direction: column-reverse;
+	margin-bottom: auto;
+	height: 100%;
+	width: 100%;
+}
+
+h1 {
+	margin: 0;
+}
+
+h3 {
+	margin-top: 25px;
+}
+
+.row {
+	height: 100%;
+	width: 100%;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.overview-container {
+	margin: auto;
+	width: 75%;
+	height: 235px;
+	border-radius: 25px;
+	position: relative;
+	/* background-color: #ffffff; */
+	/* box-shadow: 2px 2px 10px #e3e3e3; */
+	box-shadow: black;
+}
+
+.owner-dean-container {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -10px;
+}
+
+.balance-container {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+}
+
+.owner {
+	color: #7e7e7e;
+	margin-bottom: -25px;
+	text-align: center;
+	font-weight: 400;
+
+}
+
+.dean {
+	color: #a6a6a6;
+	text-align: center;
+	margin-bottom: 50px;
+	font-weight: 100;
+}
+
+.digital {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.balance {
+	font-size: 48px;
+	text-align: center;
+}
+
+.copy {
+	margin-left: 10px;
+	cursor: pointer;
+}

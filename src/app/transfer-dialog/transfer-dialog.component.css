@@ -1,0 +1,39 @@
+.transfer-dialog-container {
+	margin: auto;
+	width: 70%;
+	height: 350px;
+	/* border-radius: 25px; */
+	position: relative;
+	margin-bottom: 50px;
+	background-color: #ffffff;
+	box-shadow: 2px 2px 10px #e3e3e3;
+	box-shadow: black;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 50px;
+}
+
+.cancel-button {
+	width: 100%;
+	background-color: #42e895;
+	border: none;
+	margin-bottom: -5px;
+	background-color: #cdcdcd;
+}
+
+.transfer-button {
+	width: 100%;
+	position: relative;
+	margin-bottom: -5px;
+}
+
+.transfer-button:enabled {
+	background-color: #42e895;
+	border: none;
+}
+
+.transfer-button:disabled {
+	background-color: #a8a8a8;
+	border: none;
+	content: '...';
+}

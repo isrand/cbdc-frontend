@@ -1,0 +1,29 @@
+.transaction-list-container {
+	width: 80%;
+	background-color: #ffffff;
+	margin: auto;
+	/* border-radius: 25px; */
+	box-shadow: 2px 2px 10px #e3e3e3;
+	padding-bottom: 60px;
+	padding-top: 10px;
+	margin-bottom: 25px;
+}
+
+.transaction-list-title {
+	font-weight: 100;
+	font-style: normal;
+	text-align: center;
+	margin: auto;
+	font-size: 24px;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 80%;
+}
+
+.reload {
+	text-align: right;
+	padding-right: 30px;
+	margin-bottom: 25px;
+	cursor: pointer;
+}

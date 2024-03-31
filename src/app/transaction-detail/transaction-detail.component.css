@@ -1,0 +1,23 @@
+.transaction-detail-container {
+	margin: auto;
+	width: 90%;
+	height: 180px;
+	background-color: #f0f0f0;
+	padding-top: 25px;
+	box-shadow: -5px 0px 0px rgb(76, 188, 102);
+}
+
+.transaction-detail-container-negative {
+	margin: auto;
+	width: 90%;
+	height: 180px;
+	background-color: #f0f0f0;
+	padding-top: 25px;
+	box-shadow: -5px 0px 0px rgb(255, 72, 72)
+}
+
+.description {
+	font-size: 14px;
+	margin-bottom: 50px;
+	margin-left: 20px;
+}
