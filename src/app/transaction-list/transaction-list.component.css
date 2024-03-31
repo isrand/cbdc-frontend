@@ -12,18 +12,25 @@
 .transaction-list-title {
 	font-weight: 100;
 	font-style: normal;
-	text-align: center;
-	margin: auto;
+	text-align: left;
 	font-size: 24px;
-	padding: 10px;
+	padding: 20px;
+	padding-left: 35px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	width: 80%;
 }
 
+hr {
+	width: 95%;
+	margin-bottom: 25px;
+	color: rgb(205, 205, 205);
+}
+
 .reload {
 	text-align: right;
 	padding-right: 30px;
-	margin-bottom: 25px;
+	margin-top: -57px;
+	padding-bottom: -5px;
 	cursor: pointer;
 }

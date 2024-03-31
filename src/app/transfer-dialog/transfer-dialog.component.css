@@ -19,12 +19,15 @@
 	border: none;
 	margin-bottom: -5px;
 	background-color: #cdcdcd;
+	height: 35px;
 }
 
 .transfer-button {
+	height: 35px;
+
 	width: 100%;
 	position: relative;
-	margin-bottom: -5px;
+	margin-bottom: 10px;
 }
 
 .transfer-button:enabled {

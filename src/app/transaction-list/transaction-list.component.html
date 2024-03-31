@@ -2,8 +2,10 @@
 	<div class="top-bar">
 		<h1 class="transaction-list-title">Transactions</h1>
 		<div class="reload" (click)="onRefreshClick()">
-			Refresh
+			<img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Refresh_icon.png" width="25px">
 		</div>
+		<hr>
+
 	</div>
 
 	<transaction-card *ngFor="let transaction of transactions"
