@@ -61,7 +61,6 @@ export class AppComponent {
     this.transferDialogVisible = !this.transferDialogVisible;
   }
 
-
   @HostListener('document:keypress', ['$event'])
   async changeColorScheme(event: KeyboardEvent) {
     switch(event.key) {

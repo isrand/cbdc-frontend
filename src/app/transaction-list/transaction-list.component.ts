@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TokenSDKTransaction } from '../model/token.sdk.transaction';
+import { TokenSDKTransaction, TokenSDKTransactionWithStringAmount } from '../model/token.sdk.transaction';
 import { TransactionCardComponent } from '../transaction-card/transaction-card.component';
 import { ColorScheme } from '../model/colorscheme';
 

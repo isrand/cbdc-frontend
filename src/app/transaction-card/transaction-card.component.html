@@ -10,11 +10,11 @@
 		<div class="column">
 			<div *ngIf="debtor != activeAccountId" class="amount-positive">
 				<div class="positive-container">
-					+{{amount / 100}}
+					+{{amount / 100 | number: '1.2-2' }}
 				</div>
 			</div>
 			<div *ngIf="creditor != activeAccountId && debtor == activeAccountId" class="amount-negative">
-				-{{amount / 100}}
+				-{{amount / 100 | number: '1.2-2' }}
 			</div>
 		</div>
 	</div>
