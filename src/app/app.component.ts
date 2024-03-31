@@ -31,6 +31,7 @@ export class AppComponent {
 
   account: Account;
   accountTransactions: TokenSDKTransaction[];
+  balanceAsString = '';
 
   // Bank UI color scheme
   colorScheme: ColorScheme;
@@ -49,6 +50,10 @@ export class AppComponent {
     });
     this.getAccountBalance(this.account.id).then((val) => {
       this.account.balance = val;
+      this.balanceAsString = (this.account.balance / 100).toString();
+      if (this.balanceAsString.indexOf('.') === -1) {
+        this.balanceAsString += '.00';
+      }
     });
   }
 
@@ -59,21 +64,6 @@ export class AppComponent {
 
   @HostListener('document:keypress', ['$event'])
   async changeColorScheme(event: KeyboardEvent) {
-    // switch(event.key) {
-    //   case '[':
-    //     this.colorScheme = getColorScheme('ING');
-    //     break;
-    //   case ']':
-    //     this.colorScheme = getColorScheme('Santander');
-    //     break;
-    //   case '\'':
-    //     this.colorScheme = getColorScheme('RABO');
-    //     break;
-    //   case '\\':
-    //     this.colorScheme = getColorScheme('ABN');
-    //     break;
-    // }
-
     switch(event.key) {
       case '[':
         this.colorScheme = getColorScheme('ING');
@@ -138,6 +128,10 @@ export class AppComponent {
     });
     await this.getAccountBalance(this.account.id).then((val) => {
       this.account.balance = val;
+      this.balanceAsString = (this.account.balance / 100).toString();
+      if (this.balanceAsString.indexOf('.') === -1) {
+        this.balanceAsString += '.00';
+      }
     });
   }
 }

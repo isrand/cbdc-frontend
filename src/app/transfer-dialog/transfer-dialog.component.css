@@ -1,42 +1,120 @@
 .transfer-dialog-container {
 	margin: auto;
-	width: 70%;
-	height: 350px;
+	width: 80%;
+	height: 250x;
 	/* border-radius: 25px; */
-	position: relative;
 	margin-bottom: 50px;
 	background-color: #ffffff;
 	box-shadow: 2px 2px 10px #e3e3e3;
 	box-shadow: black;
-	padding-left: 50px;
-	padding-right: 50px;
+	padding-top: 50px;
+}
+
+.transfer-dialog-waiting-container {
+	margin: auto;
+	width: 80%;
+	height: 250x;
+	/* border-radius: 25px; */
+	margin-bottom: 50px;
+	background-color: #ffffff;
+	box-shadow: 2px 2px 10px #e3e3e3;
+	box-shadow: black;
 	padding-top: 50px;
 }
 
 .cancel-button {
+	cursor: pointer;
+	margin-top: 25px;
+	font-size: 18px;
+	width: 50%;
+	background-color: #42e895;
+	border: none;
+	margin-bottom: -5px;
+	background-color: #cdcdcd;
+	height: 50px;
+}
+
+.close-button {
+	cursor: pointer;
+	margin-top: 25px;
+	font-size: 18px;
 	width: 100%;
 	background-color: #42e895;
 	border: none;
 	margin-bottom: -5px;
 	background-color: #cdcdcd;
-	height: 35px;
+	height: 50px;
+}
+
+.cancel-button:hover {
+	filter: contrast(75%)
+}
+
+.close-button:hover {
+	filter: contrast(75%)
 }
 
 .transfer-button {
-	height: 35px;
+	cursor: pointer;
+	margin-top: 25px;
+	float: left;
+	height: 50px;
+	width: 50%;
+	margin: auto;
+	font-size: 18px;
 
-	width: 100%;
-	position: relative;
-	margin-bottom: 10px;
+}
+
+.transfer-button:hover {
+	filter: saturate(2)
 }
 
 .transfer-button:enabled {
-	background-color: #42e895;
+	margin-top: 25px;
 	border: none;
 }
 
 .transfer-button:disabled {
-	background-color: #a8a8a8;
+	margin-top: 25px;
+	filter: grayscale(50);
 	border: none;
 	content: '...';
+}
+
+.inp {
+	/* border: none; */
+	height: 50px;
+	width: 85%;
+	display: block;
+	margin: auto;
+	margin-top: 5px;
+	margin-bottom: 25px;
+	padding-left: 10px;
+	font-size: 18px;
+}
+
+.inp::placeholder {
+	font-weight: lighter;
+	color: #c5c5c5;
+}
+
+.input-title {
+	font-weight: 100;
+	padding-left: 55px;
+	background-color: #ffffff;
+}
+
+.spinner {
+	margin-top: -10px;
+	margin-bottom: 25px;
+	width: 10%;
+}
+
+.transaction-complete-text {
+	font-weight: 100;
+	font-size: 18px;
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	margin-bottom: 10px;
 }

@@ -6,12 +6,14 @@ import { TransferDialogComponent } from '../transfer-dialog/transfer-dialog.comp
 @Component({
   selector: 'operations-bar',
   standalone: true,
-  imports: [CommonModule, TransferDialogComponent],
+  imports: [CommonModule],
   templateUrl: './operations-bar.component.html',
   styleUrl: './operations-bar.component.css'
 })
 export class OperationsBarComponent {
-  @Output('toggleTransferDialogVisibility') toggleTransferDialogVisibility: EventEmitter<any> = new EventEmitter();
+
+  @Input()
+  transferDialog: TransferDialogComponent;
 
   @Input()
   colorScheme: ColorScheme;
@@ -19,9 +21,8 @@ export class OperationsBarComponent {
   @Input()
   currentUser: string;
 
-  showingTransferDialog = false;
-
   showTransferDialog() {
-    this.toggleTransferDialogVisibility.emit();
+    this.transferDialog.resetComponentState();
+    this.transferDialog.show();
   }
 }

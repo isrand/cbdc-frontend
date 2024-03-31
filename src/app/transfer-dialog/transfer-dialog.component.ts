@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Input, Output, importProvidersFrom } from '@angular/core';
+import { Component, EventEmitter, HostListener, Injectable, Input, Output, importProvidersFrom } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { getAccountBankName, getIntermediaryBankURL } from '../config';
+import { getAccountBankName, getAccountIdFromDEAN, getIntermediaryBankURL } from '../config';
 import { HttpClient } from '@angular/common/http';
+import { ColorScheme } from '../model/colorscheme';
 
 @Component({
   selector: 'transfer-dialog',
@@ -16,19 +17,30 @@ export class TransferDialogComponent {
   @Output('reloadData') reloadData: EventEmitter<any> = new EventEmitter();
 
   transferButtonEnabled = true;
+  waiting = false;
+  done = false;
+  showComponent = false;
 
   public constructor(private http: HttpClient) {}
+
+  @Input()
+  colorScheme: ColorScheme;
 
   @Input()
   self: string = '';
 
   recipient: string = '';
-  amount: number = 0;
-  bankName: string = '';
-  concept: string = '';
+  amount: number;
+  message: string = '';
 
   async doTransfer() {
+    this.done = false;
+    this.waiting = true;
     this.transferButtonEnabled = false;
+
+    const accountId = getAccountIdFromDEAN(this.recipient);
+    const creditorBankName = getAccountBankName(accountId);
+
     const requestBody = {
       debtor: this.self,
       instructedAmount: {
@@ -36,28 +48,44 @@ export class TransferDialogComponent {
         amount: Number(this.amount) * 100 // Token SDK deals with cents, not euros...
       },
       creditor: {
-        intermediary: this.bankName,
-        account: this.recipient
+        intermediary: creditorBankName,
+        account: accountId
       },
-      message: this.concept
+      message: this.message
     };
 
-    console.log(this.self);
     const debtorBankName = getAccountBankName(this.self);
     const intermediaryBankURL = getIntermediaryBankURL(debtorBankName);
     try {
-      const response = await this.http.post(`${intermediaryBankURL}/api/v1/payments/digital-currency-transfer`, requestBody).toPromise();
-      
+      await this.http.post(`${intermediaryBankURL}/api/v1/payments/digital-currency-transfer`, requestBody).toPromise();
     } catch (error) {
 
     }
-
     this.reloadData.emit();
     this.transferButtonEnabled = true;
+    this.waiting = false;
+    this.done = true;
+  }
+  
+  show() {
+    this.showComponent = true;
   }
 
-  cancel() {
-
+  hide() {
+    this.showComponent = false;
   }
 
+  // reset the component to the main state
+  resetComponentState() {
+    this.transferButtonEnabled = true;
+    this.done = false;
+    this.waiting = false;
+  }
+
+  @HostListener('document:keypress', ['$event'])
+  async submitForm (event: KeyboardEvent) {
+    if (this.showComponent && this.recipient && this.amount && event.key === 'Enter') {
+      this.doTransfer();
+    }
+  }
 }

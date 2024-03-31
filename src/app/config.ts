@@ -42,44 +42,50 @@ const accounts: Account[] = [
         bank: 'bank1',
         owner: 'Alice Alisson',
         balance: 0,
-        dean: 'NL01 DEAN 0123456789'
+        dean: 'NL01DEAN0123456789'
     },
     {
         id: 'bob',
         bank: 'bank1',
         owner: 'Bob Bobberts',
         balance: 0,
-        dean: 'NL01 DEAN 9876543210'
+        dean: 'NL01DEAN9876543210'
     },
     {
         id: 'carlos',
         bank: 'bank2',
         owner: 'Carlos Careless',
         balance: 0,
-        dean: 'NL02 DEAN 9876543210'
+        dean: 'NL02DEAN5762098312'
     },
     {
         id: 'dan',
         bank: 'bank2',
         owner: 'Dan Dankjewel',
         balance: 0,
-        dean: 'NL02 DEAN 9876543210'
+        dean: 'NL02DEAN9876543210'
     },
     {
         id: 'bank1-mca',
         bank: 'bank1',
         owner: 'Bank1 MCA',
         balance: 0,
-        dean: 'NL01 DEAN 6789012345'
+        dean: 'NL01DEAN6789012345'
     },
     {
         id: 'bank2-mca',
         bank: 'bank2',
         owner: 'Bank2 MCA',
         balance: 0,
-        dean: 'NL02 DEAN 6789012345'
+        dean: 'NL02DEAN6789012331'
     },
-]
+];
+
+export function getAccountIdFromDEAN(dean: string) {
+    const account = accounts.find((elem) => elem.dean === dean);
+
+    return account.id;
+}
 
 export function getAccount(name: string) {
     return accounts.find((elem) => elem.id === name);

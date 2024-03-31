@@ -7,13 +7,10 @@
 <overview
   [owner]="account.owner"
   [dean]="account.dean"
-  [balance]="account.balance"
+  [balance]="balanceAsString"
   [colorScheme]="colorScheme">
 </overview>
 
-<operations-bar [colorScheme]="colorScheme" [currentUser]="account.id" (toggleTransferDialogVisibility)="toggleTransferDialogVisibility()"></operations-bar>
-<div *ngIf="transferDialogVisible">
-  <transfer-dialog [self]="account.id" (reloadData)="reloadData(account.id)"></transfer-dialog>
-</div>
-
-<transaction-list [transactions]="accountTransactions" [activeAccountId]="account.id" (reloadData)="reloadData(account.id)"></transaction-list>
+<operations-bar [colorScheme]="colorScheme" [currentUser]="account.id" [transferDialog]="transferDialogComponent"></operations-bar>
+<transfer-dialog #transferDialogComponent [self]="account.id" [colorScheme]="colorScheme" (reloadData)="reloadData(account.id)"></transfer-dialog>
+<transaction-list [transactions]="accountTransactions" [activeAccountId]="account.id" [colorScheme]="colorScheme" (reloadData)="reloadData(account.id)"></transaction-list>

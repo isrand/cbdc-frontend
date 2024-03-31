@@ -10,7 +10,7 @@
 }
 
 .transaction-list-title {
-	font-weight: 100;
+	font-weight: bold;
 	font-style: normal;
 	text-align: left;
 	font-size: 24px;
@@ -19,6 +19,10 @@
 	margin-top: 10px;
 	margin-bottom: 10px;
 	width: 80%;
+}
+
+.top-bar {
+	margin-bottom: 50px;
 }
 
 hr {

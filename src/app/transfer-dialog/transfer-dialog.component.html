@@ -1,10 +1,27 @@
-<div class="transfer-dialog-container">
-	From: <input placeholder="Recipient" [value]="self" disabled><br><br>
-	To: <input placeholder="Recipient" [(ngModel)]="recipient" required><br><br>
-	Bank name: <input type="text" placeholder="Bank name" [(ngModel)]="bankName" required><br><br>
-	Amount: <input type="number" placeholder="Amount" [(ngModel)]="amount" required><br><br>
-	Concept: <input type="text" placeholder="Concept" [(ngModel)]="concept" required><br><br>
+<div class="transfer-dialog-container" *ngIf="showComponent">
+	<div *ngIf="!waiting && !done">
+		<span class="input-title">Account number (DEAN)</span>
+		<input class="inp" placeholder="NL02DEAN9876543210" [(ngModel)]="recipient">
+		<span class="input-title">Amount</span>
+		<input class="inp" placeholder="9.99" [(ngModel)]="amount">
+		<span class="input-title">Message</span>
+		<input class="inp" placeholder="Purchase" [(ngModel)]="message">
 
-	<button (click)="doTransfer()" [disabled]="!transferButtonEnabled" class="transfer-button">Transfer</button>
-	<button (click)="cancel()" class="cancel-button">Cancel</button>
+		<button (click)="doTransfer()" [disabled]="!transferButtonEnabled" class="transfer-button" [ngStyle]="{'background-color': colorScheme.operationsButtonColor}">
+			<div class="label" [ngStyle]="{'color': colorScheme.operationsButtonLabelColor}">
+				Confirm
+			</div>
+		</button>
+		<button (click)="hide()" class="cancel-button">Cancel</button>
+	</div>
+
+	<div *ngIf="waiting" align="center">
+		<img src="https://i.pinimg.com/originals/3e/80/39/3e8039242e517ee7edc05a4e226e0b80.gif" class="spinner">
+		<!-- <img src="https://cdn.pixabay.com/animation/2023/05/02/04/29/04-29-06-428_512.gif" class="spinner"> -->
+	</div>
+
+	<div *ngIf="!waiting && done">
+		<div class="transaction-complete-text ">✅&nbsp;&nbsp;Transaction complete!</div>
+		<button (click)="hide()" class="close-button">Close</button>
+	</div>
 </div>

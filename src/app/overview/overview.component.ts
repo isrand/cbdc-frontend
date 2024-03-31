@@ -18,7 +18,7 @@ export class OverviewComponent {
   dean: string;
 
   @Input()
-  balance: number;
+  balance: string;
 
   @Input()
   colorScheme: ColorScheme;

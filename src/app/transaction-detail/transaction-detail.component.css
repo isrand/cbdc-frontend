@@ -1,6 +1,7 @@
 .transaction-detail-container {
 	margin: auto;
-	width: 90%;
+	width: 100;
+	margin-left: 5px;
 	height: 180px;
 	background-color: #f0f0f0;
 	padding-top: 25px;
@@ -11,6 +12,7 @@
 	margin: auto;
 	width: 90%;
 	height: 180px;
+	margin-left: 5px;
 	background-color: #f0f0f0;
 	padding-top: 25px;
 	box-shadow: -5px 0px 0px rgb(255, 72, 72)
