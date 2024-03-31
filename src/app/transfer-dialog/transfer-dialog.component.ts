@@ -84,7 +84,7 @@ export class TransferDialogComponent {
 
   @HostListener('document:keypress', ['$event'])
   async submitForm (event: KeyboardEvent) {
-    if (this.showComponent && this.recipient && this.amount && event.key === 'Enter') {
+    if (this.showComponent && this.recipient && this.amount && !this.done && !this.waiting && event.key === 'Enter') {
       this.doTransfer();
     }
   }
