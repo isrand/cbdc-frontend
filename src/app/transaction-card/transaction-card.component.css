@@ -52,3 +52,11 @@
 	margin-right: 15px;
 	color: rgb(76, 188, 102);
 }
+
+span.ellipsis-text {
+	display: inline-block; /* Ensure the span respects width */
+	width: 25%;
+	white-space: nowrap; /* Prevent text from wrapping */
+	overflow: hidden; /* Hide any overflowing text */
+	text-overflow: ellipsis; /* Show ellipsis (...) for truncated text */
+}

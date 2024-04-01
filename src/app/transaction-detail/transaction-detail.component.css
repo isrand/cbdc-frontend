@@ -19,7 +19,16 @@
 }
 
 .description {
+	width: 100%;
 	font-size: 14px;
 	margin-bottom: 50px;
 	margin-left: 20px;
+}
+
+span.ellipsis-text {
+	display: inline-block; /* Ensure the span respects width */
+	width: 90%;
+	white-space: nowrap; /* Prevent text from wrapping */
+	overflow: hidden; /* Hide any overflowing text */
+	text-overflow: ellipsis; /* Show ellipsis (...) for truncated text */
 }

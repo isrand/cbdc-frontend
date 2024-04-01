@@ -92,6 +92,9 @@
 	padding-left: 10px;
 	font-size: 18px;
 	border: 1px solid #d5d5d5;
+	max-width: -webkit-fill-available;
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
 .inp::placeholder {
@@ -101,7 +104,7 @@
 
 .input-title {
 	font-weight: 100;
-	padding-left: 55px;
+	padding-left: 10%;
 	background-color: #ffffff;
 }
 
@@ -122,8 +125,9 @@
 
 h1 {
 	float: left;
-	margin-left: 55px;
+	margin-left: 10%;
 	margin-top: -15px;
 	font-weight: 400;
 	font-size: 24px;
+	margin-bottom: 10px;
 }
