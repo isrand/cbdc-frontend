@@ -1,4 +1,4 @@
-.transfer-dialog-container {
+.request-dialog-container {
 	margin: auto;
 	width: 80%;
 	height: 250x;
@@ -10,7 +10,7 @@
 	padding-top: 50px;
 }
 
-.transfer-dialog-waiting-container {
+.request-dialog-waiting-container {
 	margin: auto;
 	width: 80%;
 	height: 250x;
@@ -54,7 +54,7 @@
 	filter: contrast(75%)
 }
 
-.transfer-button {
+.request-button {
 	cursor: pointer;
 	margin-top: 25px;
 	float: left;
@@ -65,16 +65,16 @@
 
 }
 
-.transfer-button:hover {
+.request-button:hover {
 	filter: saturate(2)
 }
 
-.transfer-button:enabled {
+.request-button:enabled {
 	margin-top: 25px;
 	border: none;
 }
 
-.transfer-button:disabled {
+.request-button:disabled {
 	margin-top: 25px;
 	filter: grayscale(50);
 	border: none;

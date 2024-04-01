@@ -11,6 +11,7 @@ import { OverviewComponent } from './overview/overview.component';
 import { TransactionCardComponent } from './transaction-card/transaction-card.component';
 import { TransactionListComponent } from './transaction-list/transaction-list.component';
 import { TransferDialogComponent } from './transfer-dialog/transfer-dialog.component';
+import { RequestDialogComponent } from './request-dialog/request-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,7 @@ import { TransferDialogComponent } from './transfer-dialog/transfer-dialog.compo
     OverviewComponent,
     OperationsBarComponent,
     TransferDialogComponent,
+    RequestDialogComponent,
     NgForOf,
   ],
   standalone: true

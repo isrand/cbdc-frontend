@@ -1,16 +1,14 @@
-<div class="transfer-dialog-container" *ngIf="showComponent">
+<div class="request-dialog-container" *ngIf="showComponent">
 	<div *ngIf="!waiting && !done">
-		<h1>Transfer</h1><br><br>
+		<h1>Payment request</h1><br><br>
 		<hr style="margin-left: 55px; margin-right: 55px; color: #adadad">
 		<br><br>
-		<span class="input-title">Account number (DEAN)</span>
-		<input class="inp" placeholder="NL02DEAN9876543210" [(ngModel)]="recipient">
 		<span class="input-title">Amount</span>
 		<input class="inp" placeholder="9.99" [(ngModel)]="amount">
 		<span class="input-title">Message</span>
 		<input class="inp" placeholder="Purchase" [(ngModel)]="message">
 
-		<button (click)="doTransfer()" [disabled]="!transferButtonEnabled" class="transfer-button" [ngStyle]="{'background-color': colorScheme.operationsButtonColor}">
+		<button (click)="doTransfer()" [disabled]="!transferButtonEnabled" class="request-button" [ngStyle]="{'background-color': colorScheme.operationsButtonColor}">
 			<div class="label" [ngStyle]="{'color': colorScheme.operationsButtonLabelColor}">
 				Confirm
 			</div>

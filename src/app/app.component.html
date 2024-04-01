@@ -11,6 +11,7 @@
   [colorScheme]="colorScheme">
 </overview>
 
-<operations-bar [colorScheme]="colorScheme" [currentUser]="account.id" [transferDialog]="transferDialogComponent"></operations-bar>
+<operations-bar [colorScheme]="colorScheme" [currentUser]="account.id" [transferDialog]="transferDialogComponent" [requestDialog]="requestDialogComponent"></operations-bar>
 <transfer-dialog #transferDialogComponent [self]="account.id" [colorScheme]="colorScheme" (reloadData)="reloadData(account.id)"></transfer-dialog>
+<request-dialog #requestDialogComponent [self]="account.id" [colorScheme]="colorScheme" (reloadData)="reloadData(account.id)"></request-dialog>
 <transaction-list [transactions]="accountTransactions" [activeAccountId]="account.id" [colorScheme]="colorScheme" (reloadData)="reloadData(account.id)"></transaction-list>

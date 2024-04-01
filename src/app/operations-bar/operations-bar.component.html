@@ -8,7 +8,7 @@
 			</div>
 		</div>
 		<div class="column">
-			<div class="operations-button" [ngStyle]="{'background-color': colorScheme.operationsButtonColor}">
+			<div class="operations-button" [ngStyle]="{'background-color': colorScheme.operationsButtonColor}" (click)="showRequestDialog()">
 				<div class="operations-button-label" [ngStyle]="{'color': colorScheme.operationsButtonLabelColor}">
 					Request
 				</div>
